@@ -1,54 +1,164 @@
+/* Import modern premium font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at top right, #f8fafc 0%, #e2e8f0 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 40px 32px;
+  border-radius: 24px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.03),
+    0 20px 40px -15px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
   text-align: center;
-  width: 320px;
+  width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.03),
+    0 25px 50px -12px rgba(0, 0, 0, 0.12);
 }
 
 h1 {
-  margin-bottom: 15px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.03em;
 }
 
-input {
-  margin: 10px 0;
+.credit {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  margin-top: 0;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+h4 {
+  margin: 0 0 24px 0;
+  font-weight: 400;
+}
+
+/* Premium styling for the promotion banner link */
+h4 a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.5;
+  display: block;
+  padding: 12px 14px;
+  background: #eef2ff;
+  border: 1px solid #e0e7ff;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+h4 a:hover {
+  background: #e0e7ff;
+  color: #4338ca;
+  border-color: #c7d2fe;
+}
+
+/* Custom premium look for the default file input */
+input[type="file"] {
+  width: 100%;
+  margin: 16px 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+input[type="file"]::file-selector-button {
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 13px;
+  margin-right: 12px;
+  transition: background 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #1e293b;
+}
+
+p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 16px 0;
+}
+
+/* Styled inline code/shortcut tag */
+p b {
+  color: #334155;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
 }
 
 canvas {
-  margin-top: 15px;
+  margin-top: 20px;
   max-width: 100%;
-  border: 1px solid #ddd;
-  display: none;
+  border-radius: 14px;
+  border: 2px dashed #cbd5e1;
+  background: #f8fafc;
+  box-sizing: border-box;
 }
 
-button {
-  margin-top: 15px;
-  padding: 10px 15px;
+button#downloadBtn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px 20px;
   border: none;
-  background: #007bff;
-  color: white;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+  color: #ffffff;
+  border-radius: 12px;
   cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button:disabled {
-  background: #aaa;
-  cursor: not-allowed;
+button#downloadBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+  background: linear-gradient(135deg, #5a52e6 0%, #4338ca 100%);
 }
-.credit {
-  font-size: 12px;
-  color: #777;
-  margin-top: -8px;
-  margin-bottom: 15px;
+
+button#downloadBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button#downloadBtn:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  box-shadow: none;
+  cursor: not-allowed;
 }
